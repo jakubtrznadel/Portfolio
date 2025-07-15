@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;600;700&display=swap');
-
 #root {
   max-width: none;
   width: 100vw;
@@ -583,6 +581,7 @@ h1, h2, h3 {
   padding: 3rem 0 3rem 0;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;600;700&display=swap');
 
 body, #root {
   font-family: 'Inter', 'Montserrat', Arial, sans-serif;

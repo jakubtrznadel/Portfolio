@@ -251,19 +251,28 @@ function App() {
               exit={{ x: projects.find(p => p.id === expanded)?.side === 'right' ? '100vw' : '-100vw' }}
               transition={{ duration: 0.6, type: 'tween' }}
               style={{
-                background: ['FoodFlow', 'Tripify'].includes(projects.find(p => p.id === expanded)?.title || '') ? '#fff' : 'rgba(24,24,24,0.95)',
+                background: ['FoodFlow', 'Tripify'].includes(projects.find(p => p.id === expanded)?.title || '') ? 'rgba(255,255,255,0.75)' : 'rgba(24,24,24,0.95)',
                 color: ['FoodFlow', 'Tripify'].includes(projects.find(p => p.id === expanded)?.title || '') ? '#181818' : '#fff',
               }}
             >
               <button className="project-close" onClick={handleClose}>&#10005;</button>
-              <div className="project-expanded-content">
-                <div className="project-expanded-img">
+              <div className="project-expanded-content"
+                style={{
+                  background: ['FoodFlow', 'Tripify'].includes(projects.find(p => p.id === expanded)?.title || '') ? '#fff' : '#232526',
+                  color: ['FoodFlow', 'Tripify'].includes(projects.find(p => p.id === expanded)?.title || '') ? '#181818' : '#fff',
+                }}
+              >
+                <div className="project-expanded-img"
+                  style={{
+                    background: ['FoodFlow', 'Tripify'].includes(projects.find(p => p.id === expanded)?.title || '') ? '#fff' : '#181818',
+                  }}
+                >
                   <img
                     src={projects.find(p => p.id === expanded)?.img}
                     alt={projects.find(p => p.id === expanded)?.title}
                     style={{
-                      maxWidth: 260,
-                      maxHeight: 140,
+                      maxWidth: 520,
+                      maxHeight: 280,
                       width: 'auto',
                       height: 'auto',
                       margin: '0 auto',
@@ -272,8 +281,14 @@ function App() {
                   />
                 </div>
                 <div className="project-expanded-info">
-                  <h2>{projects.find(p => p.id === expanded)?.title}</h2>
-                  <p>{projects.find(p => p.id === expanded)?.desc}</p>
+                  <h2 style={{ color: ['FoodFlow', 'Tripify'].includes(projects.find(p => p.id === expanded)?.title || '') ? '#181818' : '#fff' }}>
+                    {projects.find(p => p.id === expanded)?.title}
+                  </h2>
+                  <p
+                    style={{ color: ['FoodFlow', 'Tripify'].includes(projects.find(p => p.id === expanded)?.title || '') ? '#181818' : '#fff' }}
+                  >
+                    {projects.find(p => p.id === expanded)?.desc}
+                  </p>
                   {projects.find(p => p.id === expanded)?.link && (
                     <a href={projects.find(p => p.id === expanded)?.link} target="_blank" rel="noopener noreferrer" style={{ color: '#181818', fontWeight: 700, marginTop: '1.2rem', fontSize: '1.1rem', textDecoration: 'none', background: '#FFD600', borderRadius: '12px', padding: '0.7rem 1.5rem', boxShadow: 'none' }}>
                       Zobacz repozytorium na GitHubie
